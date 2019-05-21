@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{{url_for('static', filename='imgs/favicon.ico')}}" type="image/x-icon">
+    <title>{%block title%}{% endblock%}</title>
+</head>
+<body>
+        <!-- sintaxis de jinja para intercambiar datos con el backend-->
+        <h1>{{titulo}}</h1>
+        {% for value in lista %}
+        <p>{{value}}</p>
+        {% endfor %}
+        <img src="{{ url_for('static', filename='imgs/img1.jpg')}}" alt="Berserker" width="400" height="400">
+        {% block content %}
+        {% endblock %}
+</body>
+</html>
